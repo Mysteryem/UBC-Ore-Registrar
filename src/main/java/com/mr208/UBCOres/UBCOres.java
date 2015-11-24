@@ -6,6 +6,15 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import exterminatorJeff.undergroundBiomes.worldGen.OreUBifier;
+import exterminatorJeff.undergroundBiomes.common.UndergroundBiomes;
+import java.lang.reflect.Field;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import net.minecraft.block.Block;
 
 @Mod(modid=References.MODID, name=References.MODNAME, dependencies = References.DEPENDENCIES, version = References.VERSION)
 public class UBCOres {
@@ -43,9 +52,10 @@ public static UBCOres instance;
     if(Config.ClockPhaseOres && Loader.isModLoaded("clockworkphase")) Mods.ClockworkPhase(event);
     if(Config.RFToolsOres && Loader.isModLoaded("rftools")) Mods.RFTools(event);
     if(Config.ElnOres && Loader.isModLoaded("Eln")) Mods.ElectricalAge(event);
-      
+    if(Config.DracEvOres && Loader.isModLoaded("DraconicEvolution")) Mods.DraconicEvolution(event);
+    if(Config.SGCraftOres && Loader.isModLoaded("SGCraft")) Mods.SGCraft(event);
     }
-
+    
     @Mod.EventHandler
     public void Init(FMLInitializationEvent event)
     {
@@ -54,5 +64,7 @@ public static UBCOres instance;
 		if(Config.BPOres && Loader.isModLoaded("bluepower")) Mods.BluePower(null);
 		if(Config.AM2Ores && Loader.isModLoaded("arsmagica2")) Mods.ArsMag(null);
     if(Config.FossilOres && Loader.isModLoaded("fossil")) Mods.FossilsAndArcheology(null);
+    if(Config.LanteaOres && Loader.isModLoaded("LanteaCraft")) Mods.LanteaCraft(null);
+    if(Config.MOOres && Loader.isModLoaded("mo")) Mods.MatterOverdrive(null);
     }
 }

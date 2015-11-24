@@ -36,6 +36,10 @@ public class Config {
   public static boolean RFToolsOres;
   public static boolean ElnOres;
   public static boolean FossilOres;
+  public static boolean LanteaOres;
+  public static boolean MOOres;
+  public static boolean DracEvOres;
+  public static boolean SGCraftOres;
 
     public static void init(File configFile)
     {
@@ -75,6 +79,10 @@ public class Config {
     RFToolsOres = config.getBoolean("RFTools Support","Mod Support",true,"Enable this to have RFTools' Dimensional Shards generate with UB textures.");
     ElnOres = config.getBoolean("Electrical Age Support","Mod Support",true,"Enable this to have Electrical Age's Copper, Lead, Tungsten and Cinnabar generate with UB textures.");
     FossilOres = config.getBoolean("Fossils and Archeology Revival Support","Mod Support",true,"Enable this to have Fossils and Archeology Revival's Amber and Fossils generate with UB textures.");
+    LanteaOres = config.getBoolean("Lanteacraft Support","Mod Support",true,"Enable this to have Lanteacraft's Naquadah, Naquadriah and Trinium generate with UB textures.");
+    MOOres = config.getBoolean("Matter Overdrive Support","Mod Support",true,"Enable this to have Matter Overdrive's Dilithium and Tritanium generate with UB textures.");
+    DracEvOres = config.getBoolean("Draconic Evolution Support","Mod Support",true,"Enable this to have Draconic Evolution's Draconium generate with UB textures.");
+    SGCraftOres = config.getBoolean("SGCraft Support","Mod Support",true,"Enable this to have SGCraft's Naquadah generate with UB textures.");
     
         if (config.hasChanged())
         {

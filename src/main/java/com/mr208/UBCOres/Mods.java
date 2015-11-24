@@ -28,24 +28,33 @@ public class Mods {
   //NOTE: Temporal ore doesn't spawn naturally
   public static void ClockworkPhase(FMLPreInitializationEvent event)
   {
-    Block temporalOre = GameRegistry.findBlock("clockworkphase", "oreTemporal");
-    UBCHelper.registerOreBlock(temporalOre, 0, "temporal", event);
+    //Block temporalOre = GameRegistry.findBlock("clockworkphase", "oreTemporal");
+    //UBCHelper.registerOreBlock(temporalOre, 0, "temporal", event);
+  }
+  
+  public static void DraconicEvolution(FMLPreInitializationEvent event)
+  {
+    Block draconiumOreBlock = GameRegistry.findBlock("DraconicEvolution", "draconiumOre");
+    UBCHelper.registerOreBlock(draconiumOreBlock, 0, "draconium", event);
   }
   
   public static void ElectricalAge(FMLPreInitializationEvent event)
   {
     Block elnOreBlock = GameRegistry.findBlock("Eln", "Eln.Ore");
-    UBCHelper.registerOreBlock(elnOreBlock, 1, "elnCopper", event);
-    String[] NAMES = {"elnLead", "elnTungsten", "elnCinnabar"};
-    for (int it = 0; it < NAMES.length; it++) {
-      UBCHelper.registerOreBlock(elnOreBlock, it + 4, NAMES[it], event);
-    }
+//    
+//    UBCHelper.registerOreBlock(elnOreBlock, 1, "elnCopper", event);
+//    String[] NAMES = {"elnLead", "elnTungsten", "elnCinnabar"};
+//    for (int it = 0; it < NAMES.length; it++) {
+//      UBCHelper.registerOreBlock(elnOreBlock, it + 4, NAMES[it], event);
+//    }
+    
+    UBCHelper.registerOreBlock(elnOreBlock, 5, "elnTungsten", event);
   }
 
 	public static void Factorization(FMLPreInitializationEvent event)
 	{
-		String[] BLOCKS = {"DarkIronOre","ResourceBlock"};
-		String[] NAMES = {"darkiron","silver"};
+		String[] BLOCKS = {"DarkIronOre"/*,"ResourceBlock"*/};
+		String[] NAMES = {"darkiron"/*,"silver"*/};
 		UBCHelper.registerModOresWithoutMeta("factorization", BLOCKS, NAMES, event);
 	}
 
@@ -69,21 +78,22 @@ public class Mods {
   
   public static void GalactiCraft(FMLPreInitializationEvent event)
   {
-    String Ores[] = {"galacticraftCopper","galacticraftTin","galacticraftAluminum","galacticraftSilicon"};
-    UBCHelper.registerModOresWithMeta("GalacticraftCore","tile.gcBlockCore",5,1,Ores,event);
+    String Ores[] = {/*"galacticraftCopper","galacticraftTin","galacticraftAluminum",*/"galacticraftSilicon"};
+    UBCHelper.registerModOresWithMeta("GalacticraftCore","tile.gcBlockCore",/*5*/8,1,Ores,event);
+    
   }
 
 	public static void Harvestcraft(FMLPreInitializationEvent event)
 	{
-		Block HCOreBlock = GameRegistry.findBlock("harvestcraft","salt");
-		UBCHelper.registerOreBlock(HCOreBlock,0,"salt",event);
+		/*Block HCOreBlock = GameRegistry.findBlock("harvestcraft","salt");
+		UBCHelper.registerOreBlock(HCOreBlock,0,"salt",event);*/
 	}
 
 	public static void IC2(FMLPreInitializationEvent event)
 	{
-		String[] BLOCKS = {"blockOreCopper","blockOreTin","blockOreLead","blockOreUran"};
+		/*String[] BLOCKS = {"blockOreCopper","blockOreTin","blockOreLead","blockOreUran"};
 		String[] NAMES = {"copper","tin","lead","uranium"};
-		UBCHelper.registerModOresWithoutMeta("IC2",BLOCKS,NAMES,event);
+		UBCHelper.registerModOresWithoutMeta("IC2",BLOCKS,NAMES,event);*/
 	}
 
 	public static void IC2Classic(FMLPreInitializationEvent event)
@@ -102,6 +112,20 @@ public class Mods {
     UBCHelper.registerOreBlock(jaffarrolOre, 1, "jaffarrol", event);
     UBCHelper.registerOreBlock(limsewOre, 0, "limsew", event);
   }
+  
+  public static void LanteaCraft(FMLPreInitializationEvent event) 
+  {
+    // Naquadriah does not naturally generate
+    String[] NAMES = {"naquadah", "naquadriah", "trinium"};
+    UBCHelper.registerModOresWithMeta("LanteaCraft", "lanteaOreBlock", 0, 1, NAMES, event);
+  }
+  
+  public static void MatterOverdrive(FMLPreInitializationEvent event)
+  {
+    String[] BLOCKS = {"dilithium_ore","tritanium_ore"};
+    String[] NAMES = {"dilithium","tritanium"};
+    UBCHelper.registerModOresWithoutMeta("mo", BLOCKS, NAMES, event);
+  }
 
 
 	public static void MagicalCrops(FMLPreInitializationEvent event)
@@ -112,14 +136,16 @@ public class Mods {
 
 	public static void Mekanism(FMLPreInitializationEvent event)
 	{
-		String[] NAMES = {"osmium","copper","tin"};
+		String[] NAMES = {"osmium"/*,"copper","tin"*/};
 		UBCHelper.registerModOresWithMeta("Mekanism","OreBlock",0,1,NAMES,event);
 	}
 
 	public static void ProjectRed(FMLPreInitializationEvent event)
 	{
-		String[] NAMES = {"ruby","sapphire","peridot","copper","tin","silver","electrotine"};
-		UBCHelper.registerModOresWithMeta("ProjRed|Exploration","projectred.exploration.ore",0,1,NAMES,null);
+		/*String[] NAMES = {"ruby","sapphire","peridot","copper","tin","silver","electrotine"};
+		UBCHelper.registerModOresWithMeta("ProjRed|Exploration","projectred.exploration.ore",0,1,NAMES,null);*/
+    String[] NAMES2 = {"electrotine"};
+		UBCHelper.registerModOresWithMeta("ProjRed|Exploration","projectred.exploration.ore",6,1,NAMES2,null);
 	}
 
 	public static void Railcraft(FMLPreInitializationEvent event)
@@ -142,6 +168,12 @@ public class Mods {
     Block dimensionalShard = GameRegistry.findBlock("rftools", "dimensionalShardBlock");
     UBCHelper.registerOreBlock(dimensionalShard, 0, "dimensionalShard", event);
   }
+  
+  public static void SGCraft(FMLPreInitializationEvent event)
+  {
+    Block naquadahOre = GameRegistry.findBlock("SGCraft", "naquadahOre");
+    UBCHelper.registerOreBlock(naquadahOre, 0, "sgcNaquadah", event);
+  }
 
 	public static void Steamcraft2(FMLPreInitializationEvent event)
 	{
@@ -157,7 +189,7 @@ public class Mods {
 
 	public static void ThermalFoundation(FMLPreInitializationEvent event)
 	{
-		String[] NAMES = {"copper","tin","silver","lead","ferrous","shiny","manainfused"};
+		String[] NAMES = {"copper","tin","silver","lead","ferrous","shiny"/*,"manainfused"*/};
 		UBCHelper.registerModOresWithMeta("ThermalFoundation","Ore",0,1,NAMES,event);
 	}
 
@@ -169,7 +201,7 @@ public class Mods {
 
 	public static void Forestry(FMLPreInitializationEvent event)
 	{
-		String[] NAMES = {"apatite","copper","tin"};
+		String[] NAMES = {"apatite"/*,"copper","tin"*/};
 		UBCHelper.registerModOresWithMeta("Forestry","resources",0,1,NAMES,event);
 	}
 
@@ -188,8 +220,8 @@ public class Mods {
 
 	public static void ImmEng(FMLPreInitializationEvent event)
 	{
-		String[] NAMES = {"copper","bauxite","lead","silver","nickel"};
-		UBCHelper.registerModOresWithMeta("ImmersiveEngineering","ore",0,1,NAMES,event);
+		/*String[] NAMES = {"copper","bauxite","lead","silver","nickel"};
+		UBCHelper.registerModOresWithMeta("ImmersiveEngineering","ore",0,1,NAMES,event);*/
 	}
 
 	public static void ArsMag(FMLPreInitializationEvent event)
@@ -197,5 +229,5 @@ public class Mods {
 		String[] NAMES = {"vinteum","chimerite","bluetopaz","moonstone"};
 		UBCHelper.registerModOresWithMeta("arsmagica2","vinteumOre",0,1,NAMES,null);
 	}
-
+  
 }

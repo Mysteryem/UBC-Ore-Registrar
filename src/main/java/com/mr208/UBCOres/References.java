@@ -34,5 +34,9 @@ public class References {
                         "after:clockworkphase;" +
                         "after:rftools;" +
                         "after:Eln;" +
-                        "after:fossil";
+                        "after:fossil;" +
+                        "after:LanteaCraft;" +
+                        "after:mo;" +
+                        "after:DraconicEvolution;" +
+                        "after:SGCraft";
 }
